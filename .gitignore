@@ -1,0 +1,4 @@
+*.beam
+*.lock
+/ebin
+*/lib/*/ebin/*

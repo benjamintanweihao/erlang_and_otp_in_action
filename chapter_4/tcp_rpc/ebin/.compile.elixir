@@ -1,0 +1,4 @@
+ebin/Elixir.TcpRpc.Server.State.beam	Elixir.TcpRpc.Server.State	lib/tcp_prc/server.ex
+ebin/Elixir.TcpRpc.Server.beam	Elixir.TcpRpc.Server	lib/tcp_prc/server.ex	Elixir.TcpRpc.Server.State
+ebin/Elixir.TcpRpc.Supervisor.beam	Elixir.TcpRpc.Supervisor	lib/tcp_prc/supervisor.ex	Elixir.TcpRpc.Server
+ebin/Elixir.TcpRpc.beam	Elixir.TcpRpc	lib/tcp_rpc.ex	Elixir.TcpRpc.Supervisor
