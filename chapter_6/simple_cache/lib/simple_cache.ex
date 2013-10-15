@@ -16,13 +16,17 @@ defmodule SimpleCache do
     end
   end
 
+  def stop(_state) do
+    :ok
+  end
+
   def insert(key, value) do
     case SimpleCache.Store.lookup(key) do
       {:ok, pid} ->
         SimpleCache.Element.replace(pid, value)
       {:error, _} ->  
         {:ok, pid} = SimpleCache.Element.create(value)
-        SimpleCache.insert(key, pid)
+        SimpleCache.Store.insert(key, pid)
     end
   end
 
@@ -44,4 +48,5 @@ defmodule SimpleCache do
         :ok
     end
   end
+
 end
