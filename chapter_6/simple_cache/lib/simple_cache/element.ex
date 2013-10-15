@@ -81,6 +81,7 @@ defmodule SimpleCache.Element do
   end
 
   def handle_info(:timeout, state) do
+    IO.puts "TIMEOUT!"
     {:stop, :normal, state}
   end
 

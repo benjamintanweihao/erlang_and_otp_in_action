@@ -1,6 +1,10 @@
 defmodule SimpleCache do
   use Application.Behaviour
 
+  def mass_insert do
+    Enum.each(1..1_000_000, fn(x) -> insert(x, x*x) end)
+  end
+
   # See http://elixir-lang.org/docs/stable/Application.Behaviour.html
   # for more information on OTP Applications
   def start(_type, _args) do
@@ -21,6 +25,7 @@ defmodule SimpleCache do
   end
 
   def insert(key, value) do
+    IO.inspect key
     case SimpleCache.Store.lookup(key) do
       {:ok, pid} ->
         SimpleCache.Element.replace(pid, value)
